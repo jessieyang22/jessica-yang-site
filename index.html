@@ -872,7 +872,7 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
 <section class="section">
     <p class="panel-meta">Open source · github.com/jessieyang22</p>
     <p class="section-note">
-      The alternative-data work behind the pitches, built as reproducible code rather than one-off
+      Alternative-data, rates, and derivatives work, built as reproducible code rather than one-off
       spreadsheets. Results are reported as they came out, including where the signal fell short.
     </p>
 
@@ -917,6 +917,96 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
       </p>
     </article>
 
+    <article class="study">
+      <div class="study-head">
+        <h3>Treasury Curve Bootstrapping &amp; DV01 Hedging</h3>
+        <span class="stack">Python · stdlib only · 175 daily curves · 2026 YTD</span>
+      </div>
+      <p>
+        How much interest-rate risk does a DV01-sized hedge actually remove from a real
+        Treasury note, once financing and turnover costs are charged against it? The study runs
+        on <span class="term">175 official daily nominal par curves</span> — January 2 to September 11, 2026,
+        from the Treasury XML feed — and three actual notes pulled from TreasuryDirect: the 2-year,
+        5-year, and 10-year original issues outstanding at the start of the year.
+      </p>
+      <p>
+        Par yields are never read as zero yields. Each discount factor is
+        <span class="term">bootstrapped from the par coupon equation</span>, log discount factors are
+        interpolated with no extrapolation past 30 years, and cash flows are generated from actual dated
+        and maturity dates on ACT/365F with month-end preserved. Rebuilding the curve after ±1 bp parallel
+        and individual node bumps gives effective duration, convexity, parallel DV01 and
+        <span class="term">key-rate DV01</span>. The hedge holds $100 face of the five-year note against a
+        two-year note sized on <em>yesterday's</em> DV01, financed at the prior six-month par yield.
+      </p>
+      <div class="table-wrap">
+        <table class="results">
+          <caption>Financed hedge · 174 daily intervals, 1 bp assumed turnover cost, per $100 face</caption>
+          <thead>
+            <tr><th scope="col">Metric</th><th scope="col">Unhedged</th><th scope="col">DV01-hedged</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Net modeled P&amp;L</th><td>−$3.9335</td><td>−$0.0381</td></tr>
+            <tr class="highlight"><th scope="row">Daily P&amp;L std dev</th><td>$0.1999</td><td>$0.0792</td></tr>
+            <tr><th scope="row">Gross daily σ reduction</th><td>—</td><td>−60.2%</td></tr>
+            <tr><th scope="row">Cumulative turnover cost</th><td>—</td><td>$0.0820</td></tr>
+            <tr><th scope="row">5-year note effective duration</th><td colspan="2">3.906 · DV01 $0.0376</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caveat">
+        This is a curve-valued hedge study, not observed bond execution. Treasury par rates are fitted
+        indicators and every bond price here is a model output rather than a secondary-market quote; financing
+        is a rate proxy, and no repo specials, spreads or settlement lags are modeled. A parallel-DV01 hedge
+        also leaves curve-twist and convexity exposure standing. Eight tests cover par repricing, a flat-curve
+        closed form, month-end coupon dates and prior-date hedge sizing; the report regenerates from the
+        bundled data rather than from hand-entered results.
+      </p>
+    </article>
+
+    <article class="study">
+      <div class="study-head">
+        <h3>Option Pricing, Implied Vol &amp; Forward Greeks</h3>
+        <span class="stack">Python · stdlib only · Deribit BTC/USDC · 80 contracts</span>
+      </div>
+      <p>
+        A pricing and risk stack built against <span class="term">real exchange bid/ask observations</span>
+        rather than simulated prices: two production Deribit captures, a reproducibly selected 80-contract
+        sample drawn from a 618-contract BTC/USDC universe, of which 70 quotes survive the quality filters.
+        Exclusions are rule-based and reported — crossed or zero quotes, spreads above 50% of midpoint,
+        moneyness outside 70–130%, and failed no-arbitrage bounds.
+      </p>
+      <p>
+        <span class="term">Black-76</span> prices off the exchange's maturity-matched forward, with implied
+        volatility recovered by inversion from the midpoint and forward Greeks — delta and gamma to the
+        forward, vega per volatility point, theta per calendar day — taken analytically and checked against
+        finite differences. A <span class="term">zero-drift CRR tree</span> supplies the independent numerical
+        comparison.
+      </p>
+      <div class="table-wrap">
+        <table class="results">
+          <caption>CRR convergence · BTC_USDC-25SEP26-77000-C · midpoint 2210.00 USDC, inferred IV 34.37%</caption>
+          <thead>
+            <tr><th scope="col">Tree steps</th><th scope="col">Model price (USDC)</th><th scope="col">Diff. vs analytical</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">100</th><td>2214.8471</td><td>+4.8471</td></tr>
+            <tr><th scope="row">400</th><td>2209.3753</td><td>−0.6247</td></tr>
+            <tr class="highlight"><th scope="row">1,000</th><td>2210.4867</td><td>+0.4867</td></tr>
+            <tr><th scope="row">Forward delta / vega</th><td colspan="2">0.5499 · 57.06 USDC per vol point</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caveat">
+        The analytical price equals the midpoint by construction — its volatility was calibrated to that
+        midpoint — so this is a numerical consistency check, not predictive accuracy, and tree convergence
+        oscillates with step count rather than tightening monotonically. The bundled hedge example spans two
+        captures 9.4 minutes apart: long option against its initial forward delta, gross +7.17 USDC, −91.34
+        after option half-spreads and 1 bp forward costs. That interval is far too short to say anything about
+        hedge effectiveness; it demonstrates the accounting. Quotes are real but not guaranteed fills, and no
+        depth, commissions, margin, financing or stablecoin basis is modeled.
+      </p>
+    </article>
+
     <div class="repos">
 
       <div class="repo">
@@ -929,6 +1019,18 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
         <h3><a href="https://github.com/jessieyang22/saas-coverage-dashboard" target="_blank" rel="noopener">saas-coverage-dashboard</a></h3>
         <p>Interactive coverage of a six-name universe — HUBS, CRM, NOW, DDOG, SNOW, ADBE — tracking net revenue retention, growth, FCF margin, multiples, and open theses.</p>
         <span class="stack">Python · dashboard</span>
+      </div>
+
+      <div class="repo">
+        <h3><a href="https://github.com/jessieyang22/treasury-risk" target="_blank" rel="noopener">treasury-risk</a></h3>
+        <p>Discount-curve bootstrapping from official Treasury par-rate history, real note valuation, parallel and key-rate DV01, and a daily financed hedge study. Standard library only; bundled data reproduces offline.</p>
+        <span class="stack">Python · Treasury XML · fixed income</span>
+      </div>
+
+      <div class="repo">
+        <h3><a href="https://github.com/jessieyang22/options-risk" target="_blank" rel="noopener">options-risk</a></h3>
+        <p>Black-76 pricing, implied-volatility inversion, forward Greeks and a CRR tree over real Deribit bid/ask captures, with rule-based quote filters and recorded provenance.</p>
+        <span class="stack">Python · Deribit · derivatives</span>
       </div>
 
       <div class="repo">
