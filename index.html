@@ -1008,6 +1008,26 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
       </p>
     </article>
 
+    <article class="study">
+      <div class="study-head">
+        <h3>Time-Varying GARCH on SPY Volatility</h3>
+        <span class="stack">Python · R · arch · 2003–2025</span>
+      </div>
+      <p>
+        Do GARCH models whose parameters move with the data forecast SPY variance better than constant-parameter
+        GARCH? Seven models, two out-of-sample blocks (2008–2010 and 2019–2025), a validation window used only for
+        tuning, one-day-ahead QLIKE with stationary-bootstrap intervals and Diebold–Mariano tests, and a unit test
+        that every forecast uses returns through the prior day only. Written for Prof. Karmakar, whose time-varying
+        GARCH work motivated the question.
+      </p>
+      <p class="caveat">
+        Leverage was the clear gain: constant GJR-GARCH beat GARCH(1,1) on 2022–2025 by 0.049 in QLIKE (95% CI
+        −0.091 to −0.011). Exponential re-weighting was within noise of constant GARCH, and the tuned adaptive GJR
+        did worse out of sample because the 30-day half-life chosen on validation did not transfer. The 2008–2010
+        jump-day gain rests on three days. One asset and two blocks make this a first pass, not an answer.
+      </p>
+    </article>
+
     <div class="repos">
 
       <div class="repo">
@@ -1038,6 +1058,18 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
         <h3><a href="https://github.com/jessieyang22/finance-tools" target="_blank" rel="noopener">finance-tools</a></h3>
         <p>Systematic equity research utilities: a SaaS coverage monitor, a macro snapshot, and SEC EDGAR filing alerts. Runs without API keys.</p>
         <span class="stack">Python · SEC EDGAR</span>
+      </div>
+
+      <div class="repo">
+        <h3><a href="https://github.com/jessieyang22/adaptivevol" target="_blank" rel="noopener">adaptivevol</a></h3>
+        <p>GARCH, GJR, EWMA and exponentially weighted GARCH compared out of sample on SPY, with look-ahead tests, bootstrap intervals and a simulation of when adaptation can pay. Python and R, with a short memo.</p>
+        <span class="stack">Python · R · volatility</span>
+      </div>
+
+      <div class="repo">
+        <h3><a href="https://github.com/virattt/ai-hedge-fund/pull/735" target="_blank" rel="noopener">ai-hedge-fund · PR #735</a></h3>
+        <p>Open pull request to a public multi-agent AI hedge fund project, adding a hidden Markov model market-regime alpha model.</p>
+        <span class="stack">Python · hidden Markov models · open source</span>
       </div>
 
       <div class="repo">
@@ -1097,6 +1129,28 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
       </article>
 
       <article class="story">
+        <p class="pitch-date">Oct 7, 2026 · Enterprise</p>
+        <h3><a href="https://www.alligator.org/article/2026/10/the-fed-raised-interest-rates-for-the-first-time-in-three-years-heres-what-it-changes-for-uf-students-with-loans" target="_blank" rel="noopener">The Fed raised interest rates for the first time in three years. Here&rsquo;s what it changes for UF students with loans</a></h3>
+        <p class="dek">A unanimous quarter-point hike moves private variable-rate loans and credit cards within a billing cycle or two, but not federal loans, whose rate Congress sets once a year and locks for life.</p>
+        <div class="figures">
+            <div class="fig"><b>3.75–4%</b><span>Fed target range after hike</span></div>
+            <div class="fig"><b>91%</b><span>Student debt that is federal</span></div>
+            <div class="fig"><b>6.52%</b><span>Federal undergrad loan rate</span></div>
+          </div>
+      </article>
+
+      <article class="story">
+        <p class="pitch-date">Oct 22, 2026 · Enterprise</p>
+        <h3><a href="https://www.alligator.org/article/2026/10/private-equity-backs-familiar-gainesville-veterinary-clinics" target="_blank" rel="noopener">Private equity backs familiar Gainesville veterinary clinics</a></h3>
+        <p class="dek">Oak Hill Capital, Vector Capital and Harvest Partners sit behind some of the town&rsquo;s best-known clinics. What a three-to-five-year resale horizon means for prices, appointments and independent owners.</p>
+        <div class="figures">
+            <div class="fig"><b>~30%</b><span>Small-animal practices in corporate groups</span></div>
+            <div class="fig"><b>3–5 yr</b><span>Typical PE hold before resale</span></div>
+            <div class="fig"><b>3</b><span>Gainesville clinics, one PE-backed group</span></div>
+          </div>
+      </article>
+
+      <article class="story">
         <p class="pitch-date">Sep 19, 2026 · Enterprise</p>
         <h3><a href="https://www.alligator.org/article/2026/09/investing-got-easier-but-fewer-young-people-are-doing-it" target="_blank" rel="noopener">Investing got easier, but fewer young people are doing it</a></h3>
         <p class="dek">Free trades, fractional shares and AI research put the market in students&rsquo; pockets. Yet fewer under-35s invest outside retirement accounts, and more of those who do trade options and follow influencers.</p>
@@ -1104,6 +1158,17 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <div class="fig"><b>26% &rarr; 21%</b><span>Under-35s investing, 2021–24</span></div>
             <div class="fig"><b>4 in 10</b><span>Young investors trading options</span></div>
             <div class="fig"><b>$0</b><span>Commission since 2019</span></div>
+          </div>
+      </article>
+
+      <article class="story">
+        <p class="pitch-date">Oct 12, 2026 · Enterprise</p>
+        <h3><a href="https://www.alligator.org/article/2026/10/uf-health-now-runs-hospitals-from-gainesville-to-st-augustine-experts-disagree-on-what-it-means-for-patients" target="_blank" rel="noopener">UF Health now runs hospitals from Gainesville to St. Augustine. Experts disagree on what it means for patients</a></h3>
+        <p class="dek">A 99-bed hospital 60 miles from Gainesville is the newest piece of a system that grew by acquisition and by building. Supporters point to access; some research finds prices rise after mergers.</p>
+        <div class="figures">
+            <div class="fig"><b>$6.5B</b><span>Annual net revenue</span></div>
+            <div class="fig"><b>27,000+</b><span>Employees</span></div>
+            <div class="fig"><b>$320M+</b><span>Charity care and community investment</span></div>
           </div>
       </article>
 
@@ -1137,6 +1202,17 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <div class="fig"><b>+53%</b><span>2BR market rent, 2020–26</span></div>
             <div class="fig"><b>$25,830</b><span>In-state cost of attendance</span></div>
             <div class="fig"><b>6.5%</b><span>Approved annual housing rise</span></div>
+          </div>
+      </article>
+
+      <article class="story">
+        <p class="pitch-date">Oct 20, 2026 · Enterprise</p>
+        <h3><a href="https://www.alligator.org/article/2026/10/the-alligator-s-cfo-voting-guide" target="_blank" rel="noopener">The Alligator&rsquo;s CFO voting guide</a></h3>
+        <p class="dek">Two candidates for Florida chief financial officer, who runs state accounting, auditing and insurance consumer complaints. One answered the paper&rsquo;s questionnaire; the incumbent did not.</p>
+        <div class="figures">
+            <div class="fig"><b>61% / 66%</b><span>Ingoglia / Taddeo primary share</span></div>
+            <div class="fig"><b>1 of 2</b><span>Candidates who responded</span></div>
+            <div class="fig"><b>Nov 3</b><span>General election</span></div>
           </div>
       </article>
 
