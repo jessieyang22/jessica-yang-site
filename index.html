@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Jessica L. Yang — University of Florida statistics undergraduate. Long/short equity pitches, quantitative alternative-data research, and business reporting.">
+<meta name="description" content="Jessica L. Yang — University of Florida triple major in statistics, economics and mathematics. Long/short equity pitches, quantitative alternative-data research, and business reporting.">
 <meta name="author" content="Jessica L. Yang">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ctext%20y%3D%27.9em%27%20font-size%3D%2790%27%3E%F0%9F%93%88%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Jessica L. Yang">
-<meta property="og:description" content="Jessica L. Yang — University of Florida statistics undergraduate. Long/short equity pitches, quantitative alternative-data research, and business reporting.">
+<meta property="og:description" content="Jessica L. Yang — University of Florida triple major in statistics, economics and mathematics. Long/short equity pitches, quantitative alternative-data research, and business reporting.">
 <meta name="twitter:card" content="summary">
 <style>
 /* Standalone reset. The Claude Artifact host supplies its own equivalent, so this
@@ -327,6 +327,30 @@ a:hover{border-bottom-color:var(--accent)}
 .evidence li strong{color:var(--ink);font-weight:500}
 .evidence li:last-child{margin-bottom:0}
 
+.since{margin-top:1rem;padding-top:.85rem;border-top:1px dashed var(--rule-strong)}
+.since p{margin:0;color:var(--ink-2);font-size:.92rem;max-width:60ch}
+.since .since-head{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .6rem;margin-bottom:.45rem;max-width:none}
+.verdict{
+  font-family:var(--mono);
+  font-size:.66rem;
+  font-weight:600;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  border-radius:2px;
+  padding:.2rem .45rem;
+}
+.verdict.right{color:var(--long);background:var(--long-soft)}
+.verdict.wrong{color:var(--short);background:var(--short-soft)}
+.verdict.mixed{color:var(--ochre);background:var(--ochre-soft)}
+.since-move{font-family:var(--mono);font-size:.72rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.scoreline{
+  color:var(--ink-2);
+  max-width:64ch;
+  margin:-.75rem 0 1.5rem;
+  padding-left:.8rem;
+  border-left:2px solid var(--rule-strong);
+}
+.scoreline strong{color:var(--ink);font-weight:500}
 .ret{display:block}
 .ret b{
   display:block;
@@ -616,8 +640,8 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
       <p class="eyebrow">Gainesville, Florida</p>
       <h1 class="name">Jessica <span class="initial">L.</span> Yang</h1>
       <p class="standfirst">
-        Statistics undergraduate at the <strong>University of Florida Honors College</strong>.
-        I write long/short equity pitches and build the quantitative infrastructure behind them —
+        Triple major in statistics, economics and mathematics at the
+        <strong>University of Florida Honors College</strong>. I write long/short equity pitches and build the quantitative infrastructure behind them —
         factor models, alternative-data pipelines, and the valuation work that decides
         whether a thesis survives contact with the numbers.
       </p>
@@ -639,14 +663,55 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
 
   <div class="tabpanel" id="panel-pitches" role="tabpanel" aria-labelledby="tab-pitches">
 <section class="section">
-    <p class="panel-meta">Six theses · 2025—2026</p>
+    <p class="panel-meta">Nine theses · 2025—2026</p>
     <p class="section-note">
-      Every pitch below is a full write-up: a variant view of what the market is underwriting, the
+      Every pitch below is built the same way: a variant view of what the market is underwriting, the
       evidence that contradicts it, an explicit price target, and the risks that would break it.
-      Three were submitted to judged competitions.
+      Six were submitted to judged competitions.
+    </p>
+    <p class="scoreline">
+      <strong>How they've played out,</strong> marked to the Oct 29, 2026 close against each write-up's
+      price: three working (APH, LEN, SG), two mixed (CSGP, SNPS/CDNS), three against me (DUOL, SIG, FTAI),
+      one not yet tested (ABNB).
     </p>
 
     <div class="pitches">
+
+      <article class="pitch">
+        <div class="pitch-main">
+          <p class="pitch-date">Pitched Sep — Oct 2026 · Team High Gamma</p>
+          <div class="pitch-head">
+            <span class="dir short">Short</span>
+            <h3>Signet Jewelers</h3>
+            <span class="ticker">SIG</span>
+            <span class="placement">Finalist · Penn WITG x Fundamental Edge</span>
+          </div>
+          <p class="thesis">
+            The market reads positive same-store sales and two guide raises as a turnaround. The comps came
+            from <span class="term">price, not customers</span>, and FY28 is the year the price runs out: we
+            forecast EPS of $9.58 against the Street's $13.74, 30% below consensus.
+          </p>
+          <ul class="evidence">
+            <li>Reconstructed unit volume from filings: Signet sells <strong>24% fewer pieces than in FY23</strong>, so higher prices are covering a shrinking customer base.</li>
+            <li>Tested the pricing claim with an <strong>819-item shelf-price tracker</strong> across Signet's banners, and card-transaction data showing <strong>-11.7% in Q3</strong>.</li>
+            <li>Mapped Census income data onto <strong>2,192 stores</strong> to show who those stores actually serve, then tied the call to specific earnings catalysts.</li>
+          </ul>
+          <div class="since">
+            <p class="since-head"><span class="verdict wrong">Wrong so far</span><span class="since-move">SIG +16.3% · $102.26 &rarr; $118.92</span></p>
+            <p>The stock has gone against us, but the thesis hasn't been tested: Signet hasn't reported since we priced the pitch. The first real check is Q3 and the holiday guide in early December, then the first FY28 guide in March.</p>
+          </div>
+        </div>
+        <div class="pitch-side">
+          <span class="ret down"><b>-30%</b><span>Probability-weighted</span></span>
+          <dl class="sidelist">
+            <dt>Target</dt><dd>$71</dd>
+            <dt>Entry</dt><dd>$102.26</dd>
+            <dt>Bear/Bull</dt><dd>$33 / $137</dd>
+            <dt>R/R</dt><dd>1.6 : 1</dd>
+            <dt>Horizon</dt><dd>12 mo</dd>
+          </dl>
+        </div>
+      </article>
 
       <article class="pitch">
         <div class="pitch-main">
@@ -667,6 +732,10 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li>Agentic workflows move inference from GPU-bound to CPU-bound orchestration; a Georgia Tech study puts CPU tool-processing at <strong>up to 90.6% of latency</strong>. The AI CPU market runs ~$5–8B today against a projected $50B+ by 2030–31.</li>
             <li>NVIDIA's 2H27 Kyber platform lifts Paladin content from 396 to <strong>576 units per rack</strong>, with AMD, Google, and AWS Trainium moving toward the same cableless designs.</li>
           </ul>
+          <div class="since">
+            <p class="since-head"><span class="verdict right">Right so far</span><span class="since-move">APH +25.1% · $65.62 &rarr; $82.08, split-adjusted</span></p>
+            <p>Q3 sales rose 65% to $10.23B, up 37% organically, on what management called exceptional IT datacom growth. That confirms the demand, not yet the per-rack content math, which depends on Vera Rubin and Kyber. After the 2-for-1 split on Sep 3, the target is $124.67.</p>
+          </div>
         </div>
         <div class="pitch-side">
           <span class="ret up"><b>+90%</b><span>To intrinsic value</span></span>
@@ -704,6 +773,10 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li>RevenueCat data across 30,000+ apps shows <strong>~89% year-one churn</strong> on monthly language plans; Duolingo's own first-renewal rate fell from 40.4% to 35.3%.</li>
             <li>DET posted its <strong>first-ever annual decline</strong> — $42.0M from $45.6M on -17% test volume — against F-1 visa issuance down 60% YoY in its most concentrated markets.</li>
           </ul>
+          <div class="since">
+            <p class="since-head"><span class="verdict wrong">Wrong</span><span class="since-move">DUOL +38.4% · $98.57 &rarr; $136.39</span></p>
+            <p>The stock never got near $62; its lowest close was $90.03 in April. DAU growth, which I called a structural slide, re-accelerated to +23% in Q2 from +21% in Q1. The part that held up: Q2 bookings grew only 8%. It didn't matter to the stock.</p>
+          </div>
         </div>
         <div class="pitch-side">
           <span class="ret down"><b>-37%</b><span>Probability-weighted</span></span>
@@ -740,6 +813,10 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li>Incentives rose from <strong>$3.0B to $4.2B</strong>, roughly 14% of revenue, while gross margin fell from 22.5% to 18.3% — a 40bp incentive move drives an inverse 110bp margin move.</li>
             <li>Ground-truthed at Tara Serena in Gainesville: captive Lennar Mortgage offering <strong>3.75% for five years, stepping 100bp annually to 8.0%</strong> against a ~6.2% market rate — the cost capitalized into incentives, not eliminated.</li>
           </ul>
+          <div class="since">
+            <p class="since-head"><span class="verdict right">Right</span><span class="since-move">LEN -3.3% · $88.38 &rarr; $85.46</span></p>
+            <p>Margins kept falling: 15.8% in fiscal Q3 against 17.5% a year earlier, with EPS of $1.19 against $2.29. The stock closed at $73.53 on Oct 14, through the $74.02 target, then bounced 16%.</p>
+          </div>
         </div>
         <div class="pitch-side">
           <span class="ret down"><b>-16.3%</b><span>To price target</span></span>
@@ -754,6 +831,75 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <figcaption>Full write-up</figcaption>
           </figure>
           <button class="doc-btn" type="button" data-doc="len" hidden>Download PDF</button>
+        </div>
+      </article>
+
+      <article class="pitch">
+        <div class="pitch-main">
+          <p class="pitch-date">Pitched Sep — Oct 2026 · Team entry</p>
+          <div class="pitch-head">
+            <span class="dir short">Short</span>
+            <h3>Airbnb</h3>
+            <span class="ticker">ABNB</span>
+            <span class="placement">Harvard FAC x Citadel</span>
+          </div>
+          <p class="thesis">
+            Airbnb reserved now and will pay later. The 2026 re-acceleration came from a one-time bundle led by
+            Reserve Now, Pay Later, and the Street took it for a structural inflection.
+            <span class="term">Underlying nights growth is about 7%</span> and heading to 6% by 2H27.
+          </p>
+          <ul class="evidence">
+            <li>A feature that converts more browsers raises bookings once, then laps. Nights growth had fallen from <strong>+31% in 2022 to +7.4% in 2Q25</strong> before the bundle launched.</li>
+            <li>Bookings include cancellations; reviews only follow completed stays. Our index of <strong>75 million reviews across 123 cities</strong> points to 3Q26 nights of <strong>+9.2% against the Street's +11.5%</strong>, with about 0.7x the error of a naive forecast in backtests.</li>
+            <li>The Street's FY27 margin needs cost growth to slow to its lowest since the IPO, while each marketing dollar bought <strong>$2.7 of revenue in 1H26 against $6.6 in FY23</strong>. FY27 adjusted EBITDA: $4.86B against $5.82B.</li>
+          </ul>
+          <div class="since">
+            <p class="since-head"><span class="verdict mixed">Too early</span><span class="since-move">ABNB +3.7% · $160.47 &rarr; $166.45</span></p>
+            <p>A 3.7% move means nothing yet. The call gets its first real test at the Nov 5 Q3 print, then the February guide, which is where we expect FY27 consensus to come down.</p>
+          </div>
+        </div>
+        <div class="pitch-side">
+          <span class="ret down"><b>-24.5%</b><span>To price target</span></span>
+          <dl class="sidelist">
+            <dt>Target</dt><dd>$121</dd>
+            <dt>Entry</dt><dd>$160.47</dd>
+            <dt>Multiple</dt><dd>12.7x</dd>
+            <dt>Horizon</dt><dd>6 mo</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="pitch">
+        <div class="pitch-main">
+          <p class="pitch-date">Pitched Oct 2026 · Team High Gamma</p>
+          <div class="pitch-head">
+            <span class="dir short">Short</span>
+            <h3>FTAI Aviation</h3>
+            <span class="ticker">FTAI</span>
+          </div>
+          <p class="thesis">
+            Priced for Power and built on a shortage that is ending. The price pays for gas turbines FTAI can't
+            build in time or place permanently, and for
+            <span class="term">engine-module share gains</span> that last only as long as airlines can't get overhaul slots.
+          </p>
+          <ul class="evidence">
+            <li><strong>Can't build it:</strong> the FY27 guide implies 56–64 turbines against our ~20. Texas permits, satellite images and hiring data showed Houston unfinished, with about 96 staff.</li>
+            <li><strong>Can't place it:</strong> all 39 permitted AI gas plants we found run at <strong>6 ppm NOx or less</strong>, against our estimate of ~25 ppm for FTAI's turbine, which has no exhaust cleaner before about 2028.</li>
+            <li><strong>Share won't hold:</strong> a model of ~22,000 CFM56 engines shows the overhaul shortage ending in 2028, leaving swap share at <strong>59% against management's 77%</strong>.</li>
+          </ul>
+          <div class="since">
+            <p class="since-head"><span class="verdict wrong">Wrong so far</span><span class="since-move">FTAI +15.3% · $169.96 &rarr; $196.01</span></p>
+            <p>The first catalyst went against us. Q3 adjusted EBITDA of $348.3M beat both our $322M and the Street's $341M, FTAI reaffirmed 2026 and 2027 guidance and announced a $500M accelerated buyback, and the stock rose 17.3% on the day. The Power and share arguments now rest on February, when we expected the $2.3B 2027 framework to be cut.</p>
+          </div>
+        </div>
+        <div class="pitch-side">
+          <span class="ret down"><b>-39%</b><span>To price target</span></span>
+          <dl class="sidelist">
+            <dt>Target</dt><dd>$103</dd>
+            <dt>Entry</dt><dd>$169.96</dd>
+            <dt>R/R</dt><dd>2.5x</dd>
+            <dt>Horizon</dt><dd>12 mo</dd>
+          </dl>
         </div>
       </article>
 
@@ -775,6 +921,10 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li><strong>~$5B invested over five years</strong> against well under $100M of annual revenue and $3B of cumulative losses, for a 4-point gain in unaided awareness. Net investment is already being cut 35%, from $850M to ~$550M.</li>
             <li>Precedent: Google's 2010 ITA deal produced a 14-year toll-booth squeeze on OTAs — Vrbo's Google spend went from $21M to $290M on flat volume.</li>
           </ul>
+          <div class="since">
+            <p class="since-head"><span class="verdict mixed">Mixed</span><span class="since-move">CSGP -6.0% · $29.94 &rarr; $28.14</span></p>
+            <p>Down, but far from $17.63. Q3 cut both ways: net new bookings fell to $37M from $84M and the stock lost 14% the next day, yet adjusted EBITDA of $229M beat guidance and Homes.com revenue grew about 50%, which isn't what this short needs.</p>
+          </div>
         </div>
         <div class="pitch-side">
           <span class="ret down"><b>-41.1%</b><span>Three-method average</span></span>
@@ -812,6 +962,10 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li>Management targets <strong>$400M of annual Ansys savings by year three</strong>; each $100M of cross-sell at 80% gross margin adds roughly $0.50 to non-GAAP EPS.</li>
             <li>Cadence's own Hexagon deal is the smaller, messier one — ~$160M of 2026 revenue but <strong>$0.28 of 2026 EPS dilution</strong> before turning accretive in 2027.</li>
           </ul>
+          <div class="since">
+            <p class="since-head"><span class="verdict mixed">Mixed</span><span class="since-move">SNPS +23.8% · CDNS +23.0%, from Apr 2 close</span></p>
+            <p>The long leg worked: fiscal Q3 revenue rose 42% with Ansys included, and guidance went up. But Cadence kept pace, so the spread I expected to narrow barely moved. Being long Synopsys was right; the pair made almost nothing.</p>
+          </div>
         </div>
         <div class="pitch-side">
           <span class="ret up"><b>+59.4%</b><span>SNPS long leg</span></span>
@@ -847,6 +1001,10 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li>A Tampa location logged <strong>23 transactions per hour off-peak with no incremental staffing</strong>: direct evidence of operating leverage.</li>
             <li>Trades at <strong>1.22x NTM EV/revenue against Cava's 6.22x</strong> on comparable revenue scale, with loyalty liability up 114% YoY as the new program shifts behavior toward repeat.</li>
           </ul>
+          <div class="since">
+            <p class="since-head"><span class="verdict right">Right</span><span class="since-move">SG +98.8% · $5.74 &rarr; $11.41</span></p>
+            <p>Well past the $7.59 target, though not in a straight line: it closed at $6.45 in July. I can't credit the traffic work for all of it, since the May leg came with the wraps launch and a JPMorgan upgrade.</p>
+          </div>
         </div>
         <div class="pitch-side">
           <span class="ret up"><b>+34.6%</b><span>To price target</span></span>
@@ -1028,7 +1186,48 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
       </p>
     </article>
 
+    <article class="study">
+      <div class="study-head">
+        <h3>Finance Reasoning Eval from SEC Filings</h3>
+        <span class="stack">Python · Claude Haiku, Sonnet, Opus · 121 questions</span>
+      </div>
+      <p>
+        Can a model find and reason about the right number in a full filing, without the excerpt pasted in?
+        An earlier version with pasted excerpts sat at ceiling (99.6%), so this one tests harder tasks:
+        <span class="term">locating a figure</span> across filings, columns and restated bases, combining filings,
+        checking analyst claims against the source, and explaining why a number moved. Questions come from the
+        filings behind my pitches, and each has a computed key, a source quote and a named trap.
+      </p>
+      <div class="table-wrap">
+        <table class="results">
+          <caption>Right answers out of 121, adjusted for grading failures · one run per model</caption>
+          <thead>
+            <tr><th scope="col">Model / prompt</th><th scope="col">Recorded</th><th scope="col">Adjusted</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Haiku / plain</th><td>112</td><td>116</td></tr>
+            <tr><th scope="row">Sonnet / plain</th><td>105</td><td>120</td></tr>
+            <tr><th scope="row">Opus / plain</th><td>105</td><td>120</td></tr>
+            <tr><th scope="row">Sonnet / careful</th><td>119</td><td>119</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caveat">
+        This version is still mostly at ceiling, and 30 of the 43 recorded misses were the judge failing to read an
+        answer, not the model being wrong. The Sonnet and Opus adjustments rest on one Claude regrade, not a second
+        independent judge, and the rule that cut 199 verified questions to 121 wasn't recorded. About 10 misses are
+        genuine, and they are wrong-period or wrong-column pulls rather than unit slips. The weaker link is
+        retrieval: a plain BM25 search found the needed passage in its top five only 52% of the time.
+      </p>
+    </article>
+
     <div class="repos">
+
+      <div class="repo">
+        <h3><a href="https://github.com/jessieyang22/finance-eval" target="_blank" rel="noopener">finance-eval</a></h3>
+        <p>A finance-reasoning eval built from SEC filings: 121 open-book questions with exact keys, Claude Haiku, Sonnet and Opus results, error analysis, and retrieval and citation demos.</p>
+        <span class="stack">Python · LLM evaluation · SEC filings</span>
+      </div>
 
       <div class="repo">
         <h3><a href="https://github.com/jessieyang22/hiring-momentum" target="_blank" rel="noopener">hiring-momentum</a></h3>
@@ -1083,13 +1282,14 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
     <article class="study" style="margin-top:1rem">
       <div class="study-head">
         <h3>Airbnb (ABNB) — nights-demand model</h3>
-        <span class="status">In progress</span>
+        <span class="status">Fed the ABNB short</span>
       </div>
       <p>
         Team entry for the <span class="term">Harvard FAC x Citadel Intercollegiate Stock Pitch</span>.
-        I'm building the demand side: a nights-choice driver model over Eurostat platform-nights and Inside
+        I built the demand side: a nights-choice driver model over Eurostat platform-nights and Inside
         Airbnb panel data, decomposing stay length, party size, and listing professionalization into the
         revenue bridge — with the European build replacing a flat rest-of-world assumption in the global forecast.
+        The resulting short is on the Stock pitches tab.
       </p>
       <span class="stack" style="font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)">Python · pandas · Eurostat · Inside Airbnb</span>
     </article>
@@ -1251,14 +1451,14 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
 
   <div class="tabpanel" id="panel-experience" role="tabpanel" aria-labelledby="tab-experience" hidden>
 <section class="section">
-    <p class="panel-meta">Banking · real estate · newsroom</p>
+    <p class="panel-meta">Banking · real estate · student fund · newsroom</p>
     <div class="ledger">
 
       <article class="entry">
         <div class="rail"><span class="live">Aug 2026 —</span><span class="place">Gainesville, FL</span></div>
         <div>
           <h3 class="org">The Independent Florida Alligator</h3>
-          <p class="role">Enterprise Business &amp; Tech Reporter</p>
+          <p class="role">Business &amp; Tech Reporter</p>
           <ul>
             <li>Report on business and technology across Gainesville, sourcing <strong>primary financial data</strong> to produce original, analysis-driven feature stories.</li>
           </ul>
@@ -1266,7 +1466,7 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
       </article>
 
       <article class="entry">
-        <div class="rail">Jun — Aug 2026<span class="place">Mamaroneck, NY (remote)</span></div>
+        <div class="rail">June — Aug 2026<span class="place">Mamaroneck, NY (remote)</span></div>
         <div>
           <h3 class="org">Young America Capital</h3>
           <p class="role">Investment Banking Intern</p>
@@ -1284,11 +1484,12 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
       </article>
 
       <article class="entry">
-        <div class="rail">Apr — Jun 2026<span class="place">Tampa, FL</span></div>
+        <div class="rail"><span class="live">Sep 2026 —</span><span class="place">Apr — Jun 2026</span><span class="place">Tampa, FL (hybrid)</span></div>
         <div>
           <h3 class="org">Morrison Avenue Capital Partners</h3>
-          <p class="role">Real Estate Investment Intern</p>
+          <p class="role">Investment Intern</p>
           <ul>
+            <li><strong>Invited to return</strong> part-time in September to support asset management and reporting, synthesizing property-level financial and operating data into executive summaries that communicate portfolio performance to external stakeholders.</li>
             <li>Authored the go/no-go business plan and 20-slide presentation on industrial-sector expansion — <strong>adopted by leadership</strong> alongside the firm's $861M AUM multifamily platform — modeling a five-year launch to $250M+ AUM against Year 1 overhead of $370K–$495K.</li>
             <li>Built a 5-tab leveraged acquisition pro forma for a $3.25M value-add industrial asset, incorporating the debt schedule, GP waterfall, and full fee model.</li>
           </ul>
@@ -1304,11 +1505,11 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
       <article class="entry">
         <div class="rail"><span class="live">Sep 2025 —</span><span class="place">Gainesville, FL</span></div>
         <div>
-          <h3 class="org">Caimanes Student-Managed Equity Hedge Fund</h3>
-          <p class="role">Technology Sector Analyst</p>
+          <h3 class="org">Caimanes Student-Managed L/S Equity Hedge Fund</h3>
+          <p class="role">Technology Sector Portfolio Manager</p>
           <ul>
-            <li>Build models and investment theses across three weekly meetings, applying accounting, financial analysis, and valuation.</li>
-            <li>Deliver formal pitches recommending long and short positions <strong>adopted by the fund</strong>, contributing to a $1.4M book.</li>
+            <li>Manage a team building models and investment theses across three weekly meetings, applying accounting, financial analysis, and valuation.</li>
+            <li>Deliver formal pitches recommending long and short positions <strong>adopted by the fund</strong>, contributing to $1.5M AUM.</li>
           </ul>
         </div>
       </article>
@@ -1317,7 +1518,7 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
         <div class="rail"><span class="live">May 2026 —</span><span class="place">Gainesville, FL</span></div>
         <div>
           <h3 class="org">Alpha Kappa Psi Business Fraternity</h3>
-          <p class="role">Assistant Vice President of Finance</p>
+          <p class="role">Incoming Vice President of Finance</p>
           <ul>
             <li>Oversee dues for 150 members and maintain the Excel dashboard tracking budget allocation across 12 committees.</li>
           </ul>
@@ -1339,14 +1540,15 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
       <div class="rail">2025 — 2029<span class="place">Gainesville, FL</span></div>
       <div>
         <h3 class="org">University of Florida</h3>
-        <p class="role">B.A. Statistics · Honors College</p>
+        <p class="role">B.S. Statistics · B.A. Economics · B.S. Mathematics · Honors College</p>
         <ul>
           <li>Certificate in <strong>AI Fundamentals and Applications</strong>; National Merit Scholar.</li>
-          <li>Coursework in financial accounting, analytic geometry &amp; calculus 3, and differential equations.</li>
+          <li>Coursework in financial accounting, nonparametric statistical methods, and differential equations.</li>
         </ul>
         <div class="figures">
           <div class="fig"><b>3.80</b><span>GPA / 4.00</span></div>
-          <div class="fig"><b>May 2029</b><span>Expected B.A.</span></div>
+          <div class="fig"><b>1550</b><span>SAT / 1600</span></div>
+          <div class="fig"><b>May 2029</b><span>Expected graduation</span></div>
         </div>
       </div>
     </div>
@@ -1377,7 +1579,10 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
           <li>statsmodels</li>
           <li>pandas</li>
           <li>Java</li>
-          <li>Excel</li>
+          <li>Excel (advanced)</li>
+          <li>Bloomberg</li>
+          <li>Cap IQ</li>
+          <li>Refinitiv</li>
           <li>Mandarin — native</li>
         </ul>
       </div>
@@ -1390,7 +1595,7 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
           <dt>Markets</dt>
           <dd>Value Investors Club<small>Audit member</small></dd>
           <dt>Campus</dt>
-          <dd>UF Honors Athletics<small>Social media director · UF Club Tennis</small></dd>
+          <dd>UF Honors Athletics<small>Executive board · UF Club Tennis · Recalc Academy Finance Accelerator</small></dd>
         </dl>
       </div>
 
@@ -1398,7 +1603,7 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
         <h3>Off the desk</h3>
         <p>
           Tennis at a <strong>7 UTR</strong>, and a half marathon on the calendar for November.
-          Pickleball when the courts are full.
+          Pickleball when the courts are full, piano when they aren't.
         </p>
         <p>
           Otherwise: reading U.S. presidential history, which is roughly the same exercise as

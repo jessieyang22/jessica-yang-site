@@ -1,6 +1,6 @@
 # jessica-yang-site
 
-Personal site for Jessica L. Yang — University of Florida statistics undergraduate,
+Personal site for Jessica L. Yang — University of Florida triple major in statistics, economics and mathematics,
 long/short equity research and quantitative alternative-data work.
 
 ## Deploying
@@ -42,8 +42,8 @@ remembered in `localStorage`:
 
 | Tab | Contents |
 |---|---|
-| Stock pitches | Six long/short theses with targets, horizons, evidence, and the full write-up |
-| Quant research | Fama-French 5 + hiring-momentum factor study, open-source repos, ABNB work in progress |
+| Stock pitches | Nine long/short theses with targets, horizons, evidence, how each call has played out since, and most of the write-ups |
+| Quant research | Fama-French 5 + hiring-momentum factor study, finance reasoning eval, open-source repos, ABNB demand model |
 | Writing | Enterprise business and tech reporting for *The Independent Florida Alligator* |
 | Experience | Investment banking, real estate, newsroom, student fund |
 | Education & toolkit | Degree, methods, certifications, memberships |
