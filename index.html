@@ -342,6 +342,11 @@ a:hover{border-bottom-color:var(--accent)}
 .verdict.right{color:var(--long);background:var(--long-soft)}
 .verdict.wrong{color:var(--short);background:var(--short-soft)}
 .verdict.mixed{color:var(--ochre);background:var(--ochre-soft)}
+.ai-notes{margin-top:.85rem;border-top:1px dashed var(--rule-strong);padding-top:.7rem}
+.ai-notes summary{cursor:pointer;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.ai-notes summary:hover{color:var(--accent)}
+.ai-notes p{margin:.6rem 0 0;color:var(--ink-2);font-size:.92rem;line-height:1.55;max-width:60ch}
+.ai-notes p b{color:var(--ink);font-weight:500}
 .since-move{font-family:var(--mono);font-size:.72rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
 .scoreline{
   color:var(--ink-2);
@@ -663,16 +668,17 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
 
   <div class="tabpanel" id="panel-pitches" role="tabpanel" aria-labelledby="tab-pitches">
 <section class="section">
-    <p class="panel-meta">Nine theses · 2025—2026</p>
+    <p class="panel-meta">Ten theses · 2025—2026</p>
     <p class="section-note">
       Every pitch below is built the same way: a variant view of what the market is underwriting, the
       evidence that contradicts it, an explicit price target, and the risks that would break it.
-      Six were submitted to judged competitions.
+      Seven were submitted to judged competitions. Open &ldquo;How I used AI&rdquo; under a pitch to see
+      where AI did the legwork, where I overruled it, and what the data killed.
     </p>
     <p class="scoreline">
-      <strong>How they've played out,</strong> marked to the Oct 29, 2026 close against each write-up's
-      price: three working (APH, LEN, SG), two mixed (CSGP, SNPS/CDNS), three against me (DUOL, SIG, FTAI),
-      one not yet tested (ABNB).
+      <strong>How they've played out,</strong> marked to the Nov 13, 2026 close against each write-up's
+      price: three working (APH, LEN, SG), one mixed (SNPS/CDNS), five against me (DUOL, SIG, FTAI, ABNB, CSGP),
+      one not yet tested (NKE).
     </p>
 
     <div class="pitches">
@@ -684,7 +690,7 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <span class="dir short">Short</span>
             <h3>Signet Jewelers</h3>
             <span class="ticker">SIG</span>
-            <span class="placement">Finalist · Penn WITG x Fundamental Edge</span>
+            <span class="placement">Top 5 · Balyasny &middot; Finalist · Penn WITG x Fundamental Edge</span>
           </div>
           <p class="thesis">
             The market reads positive same-store sales and two guide raises as a turnaround. The comps came
@@ -697,17 +703,21 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li>Mapped Census income data onto <strong>2,192 stores</strong> to show who those stores actually serve, then tied the call to specific earnings catalysts.</li>
           </ul>
           <div class="since">
-            <p class="since-head"><span class="verdict wrong">Wrong so far</span><span class="since-move">SIG +16.3% · $102.26 &rarr; $118.92</span></p>
+            <p class="since-head"><span class="verdict wrong">Wrong so far</span><span class="since-move">SIG +11.5% · $102.26 &rarr; $113.98</span></p>
             <p>The stock has gone against us, but the thesis hasn't been tested: Signet hasn't reported since we priced the pitch. The first real check is Q3 and the holiday guide in early December, then the first FY28 guide in March.</p>
           </div>
+          <details class="ai-notes">
+            <summary>How I used AI</summary>
+            <p><b>How AI fit in.</b> A 97-agent sweep across about 75 sources, from bills of lading to WARN notices, Glassdoor and archived holiday pages, produced 444 findings. A verification pass kept 16, and a separate critic checked what got dropped. Claude built the model and Codex reviewed it, which caught a circular reference.</p>
+            <p><b>Where I checked it.</b> The card-data slide showed a 0.82 R&sup2; that turned out to be in-sample. I replaced it with the out-of-sample 1.9 point error and found a basis mismatch that cut our gap to the Street from 5.5 to 3.5 points.</p>
+            <p><b>What the data killed.</b> A mentor PM flagged a $125M accelerated buyback three weeks before earnings as the real risk. Measured against trading volume, realistic buying covered about 35% of the short, not the 96% I first wrote. A 34-test macro study showed Signet doesn't trade on macro data, so rates, sentiment, delinquencies and gold markdowns came out of the case.</p>
+          </details>
         </div>
         <div class="pitch-side">
-          <span class="ret down"><b>-30%</b><span>Probability-weighted</span></span>
+          <span class="ret down"><b>-40%</b><span>To price target</span></span>
           <dl class="sidelist">
-            <dt>Target</dt><dd>$71</dd>
+            <dt>Target</dt><dd>$61</dd>
             <dt>Entry</dt><dd>$102.26</dd>
-            <dt>Bear/Bull</dt><dd>$33 / $137</dd>
-            <dt>R/R</dt><dd>1.6 : 1</dd>
             <dt>Horizon</dt><dd>12 mo</dd>
           </dl>
         </div>
@@ -733,14 +743,19 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li>NVIDIA's 2H27 Kyber platform lifts Paladin content from 396 to <strong>576 units per rack</strong>, with AMD, Google, and AWS Trainium moving toward the same cableless designs.</li>
           </ul>
           <div class="since">
-            <p class="since-head"><span class="verdict right">Right so far</span><span class="since-move">APH +25.1% · $65.62 &rarr; $82.08, split-adjusted</span></p>
-            <p>Q3 sales rose 65% to $10.23B, up 37% organically, on what management called exceptional IT datacom growth. That confirms the demand, not yet the per-rack content math, which depends on Vera Rubin and Kyber. After the 2-for-1 split on Sep 3, the target is $124.67.</p>
+            <p class="since-head"><span class="verdict right">Right so far</span><span class="since-move">APH +19.2% · $65.62 &rarr; $78.23, split-adjusted</span></p>
+            <p>Q3 sales rose 65% to $10.23B, up 37% organically, on what management called exceptional IT datacom growth. That confirms the demand, not yet the per-rack content math, which depends on Vera Rubin and Kyber. After the 2-for-1 split on Sep 3, the target is $110.33.</p>
           </div>
+          <details class="ai-notes">
+            <summary>How I used AI</summary>
+            <p><b>How AI fit in.</b> Text analysis of hyperscaler earnings calls tracked how often they said &ldquo;agentic,&rdquo; which went from near zero in early 2024 to about 10 times in one Amazon call. I catalogued 31 arXiv papers on AI bottlenecks, and 77% named I/O as the main constraint. Code built the charts and a 50,000-path Monte Carlo.</p>
+            <p><b>Data management couldn't shape.</b> I scraped LinkedIn, Indeed and career pages. Amphenol had 546 open roles, and hyperscalers had 1,194 US signal-integrity postings, 937 from the past month. After GTC, the Groq rack teardown showed about 256 Paladin connectors per rack, which I sized at about $2.1B of 2027 revenue against $0 in consensus.</p>
+          </details>
         </div>
         <div class="pitch-side">
-          <span class="ret up"><b>+90%</b><span>To intrinsic value</span></span>
+          <span class="ret up"><b>+68%</b><span>To intrinsic value</span></span>
           <dl class="sidelist">
-            <dt>Target</dt><dd>$249.34</dd>
+            <dt>Target</dt><dd>$220.65</dd>
             <dt>Entry</dt><dd>$131.23</dd>
             <dt>WACC</dt><dd>11.3%</dd>
             <dt>Horizon</dt><dd>3–5 yr</dd>
@@ -774,7 +789,7 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li>DET posted its <strong>first-ever annual decline</strong> — $42.0M from $45.6M on -17% test volume — against F-1 visa issuance down 60% YoY in its most concentrated markets.</li>
           </ul>
           <div class="since">
-            <p class="since-head"><span class="verdict wrong">Wrong</span><span class="since-move">DUOL +38.4% · $98.57 &rarr; $136.39</span></p>
+            <p class="since-head"><span class="verdict wrong">Wrong</span><span class="since-move">DUOL +67.7% · $98.57 &rarr; $165.31</span></p>
             <p>The stock never got near $62; its lowest close was $90.03 in April. DAU growth, which I called a structural slide, re-accelerated to +23% in Q2 from +21% in Q1. The part that held up: Q2 bookings grew only 8%. It didn't matter to the stock.</p>
           </div>
         </div>
@@ -814,7 +829,7 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li>Ground-truthed at Tara Serena in Gainesville: captive Lennar Mortgage offering <strong>3.75% for five years, stepping 100bp annually to 8.0%</strong> against a ~6.2% market rate — the cost capitalized into incentives, not eliminated.</li>
           </ul>
           <div class="since">
-            <p class="since-head"><span class="verdict right">Right</span><span class="since-move">LEN -3.3% · $88.38 &rarr; $85.46</span></p>
+            <p class="since-head"><span class="verdict right">Right</span><span class="since-move">LEN -5.4% · $88.38 &rarr; $83.61</span></p>
             <p>Margins kept falling: 15.8% in fiscal Q3 against 17.5% a year earlier, with EPS of $1.19 against $2.29. The stock closed at $73.53 on Oct 14, through the $74.02 target, then bounced 16%.</p>
           </div>
         </div>
@@ -854,9 +869,14 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li>The Street's FY27 margin needs cost growth to slow to its lowest since the IPO, while each marketing dollar bought <strong>$2.7 of revenue in 1H26 against $6.6 in FY23</strong>. FY27 adjusted EBITDA: $4.86B against $5.82B.</li>
           </ul>
           <div class="since">
-            <p class="since-head"><span class="verdict mixed">Too early</span><span class="since-move">ABNB +3.7% · $160.47 &rarr; $166.45</span></p>
-            <p>A 3.7% move means nothing yet. The call gets its first real test at the Nov 5 Q3 print, then the February guide, which is where we expect FY27 consensus to come down.</p>
+            <p class="since-head"><span class="verdict wrong">Wrong so far</span><span class="since-move">ABNB +16.4% · $160.47 &rarr; $186.78</span></p>
+            <p>Q3 went against us. Nights and seats booked grew 16%, about 13% without Reserve Now, Pay Later, against our +9.2% read, and revenue rose 19% to $4.9B, above guidance. The stock jumped about 12% and Airbnb added a $12B buyback. Our reviews index missed the acceleration, and February's FY27 guide is what's left of the call.</p>
           </div>
+          <details class="ai-notes">
+            <summary>How I used AI</summary>
+            <p><b>How AI fit in.</b> I ran 26 overnight Claude workstreams with about 3,500 tests, forecast 54 questions with Claude and had Codex audit each batch. After a PM's feedback, a separate AI reviewer with no access to the repo scored my rewrite 41 of 52, against 10 for the old memo.</p>
+            <p><b>What the data killed.</b> Flights tracked nights at 0.84 from 2023 to 2026 but only 0.16 since 2024, so I stopped using them as a demand signal. Google Trends failed 162 of 162 tests and 14 macro series showed no stable driver. My direct-booking and hotel-loyalty work came out weaker than the bear case needed, so both stayed side points.</p>
+          </details>
         </div>
         <div class="pitch-side">
           <span class="ret down"><b>-24.5%</b><span>To price target</span></span>
@@ -876,6 +896,7 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <span class="dir short">Short</span>
             <h3>FTAI Aviation</h3>
             <span class="ticker">FTAI</span>
+            <span class="placement">Point72 Academy</span>
           </div>
           <p class="thesis">
             Priced for Power and built on a shortage that is ending. The price pays for gas turbines FTAI can't
@@ -888,16 +909,60 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li><strong>Share won't hold:</strong> a model of ~22,000 CFM56 engines shows the overhaul shortage ending in 2028, leaving swap share at <strong>59% against management's 77%</strong>.</li>
           </ul>
           <div class="since">
-            <p class="since-head"><span class="verdict wrong">Wrong so far</span><span class="since-move">FTAI +15.3% · $169.96 &rarr; $196.01</span></p>
+            <p class="since-head"><span class="verdict wrong">Wrong so far</span><span class="since-move">FTAI +6.0% · $169.96 &rarr; $180.20</span></p>
             <p>The first catalyst went against us. Q3 adjusted EBITDA of $348.3M beat both our $322M and the Street's $341M, FTAI reaffirmed 2026 and 2027 guidance and announced a $500M accelerated buyback, and the stock rose 17.3% on the day. The Power and share arguments now rest on February, when we expected the $2.3B 2027 framework to be cut.</p>
           </div>
+          <details class="ai-notes">
+            <summary>How I used AI</summary>
+            <p><b>How AI fit in.</b> My first AI read said short. I had Claude pull every flight registry and match engine and plane serial numbers into a ledger of 186 engines, which flipped us long. Permits and the Houston plant flipped us back to short. The short ran 94 overnight research lanes, 8 refutation passes and a critic. Only 2 of the 94 lane headlines were verified as deck-ready, and I kept the 13 lanes that cut against us.</p>
+            <p><b>Where I overruled it.</b> Claude said FTAI sold engines cheaply to its own fund, which would be a governance problem. The 10-Q showed the seed jets sold above book. A regression also caught 7 percentage points that Claude had called 7 bps. A reviewer thought our long deck looked mostly AI-made, so our GenAI appendix showed every place I overruled it.</p>
+            <p><b>What the data killed.</b> One AI lane called Quebec turbine exports &ldquo;the only plausible source&rdquo; of FTAI shipments. Ports, customs codes and destinations showed about 60% were likely Siemens Energy, so I used the series only as a ceiling. DOT airline cost data also reversed one of my own claims, that replacing old jets wasn't a risk.</p>
+          </details>
         </div>
         <div class="pitch-side">
-          <span class="ret down"><b>-39%</b><span>To price target</span></span>
+          <span class="ret down"><b>-31%</b><span>To price target</span></span>
           <dl class="sidelist">
-            <dt>Target</dt><dd>$103</dd>
+            <dt>Target</dt><dd>$117</dd>
             <dt>Entry</dt><dd>$169.96</dd>
-            <dt>R/R</dt><dd>2.5x</dd>
+            <dt>Horizon</dt><dd>12 mo</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="pitch">
+        <div class="pitch-main">
+          <p class="pitch-date">Pitched Oct 2026 &middot; Team High Gamma</p>
+          <div class="pitch-head">
+            <span class="dir short">Short</span>
+            <h3>Nike</h3>
+            <span class="ticker">NKE</span>
+          </div>
+          <p class="thesis">
+            The Street already expects a weak FY27 and prices a volume and margin rebound in FY28. Our data says
+            the rebound arrives later, if at all. We forecast <span class="term">FY28 EPS of $0.91, 41% below the Street</span>.
+          </p>
+          <ul class="evidence">
+            <li>Counted nike.com's sale pages against Wayback snapshots a year earlier. The US sale wall was <strong>up 49%</strong>, and about 23% of sale footwear was 40%+ off against 4% before, pointing to Q2 FY27 gross margin of <strong>39.9% against the Street's 40.9%</strong>.</li>
+            <li>Built a Supply Index from Feng Tay's monthly revenue (about 83% Nike), US shoe imports and 51 archived versions of Nike's factory map, with weights fixed before any backtest. It reads <strong>FY28 revenue $1.8B below the Street</strong>.</li>
+            <li>Greater China fell 26% while China's clothing and shoe sales were flat, and Nike dropped from <strong>#1 to #3 on Tmall</strong>, so the China weakness is Nike's own.</li>
+          </ul>
+          <div class="since">
+            <p class="since-head"><span class="verdict mixed">Too early</span><span class="since-move">NKE -0.9% &middot; $38.32 &rarr; $37.99</span></p>
+            <p>Barely moved so far. The first test is the December print, where gross margin is the tell, then March and June, when we expect the Street to reset FY28.</p>
+          </div>
+          <details class="ai-notes">
+            <summary>How I used AI</summary>
+            <p><b>How AI fit in.</b> Codex mapped 50 research lanes and 10 Claude agents covered the ones it hadn't run. Every number needed a URL, a period and a note on whether it was measured or just asserted. Codex then re-fetched the top claims on its own and labelled each one verified, corrected or mislabeled. It caught a wrong marathon podium count and a Google Trends set I couldn't reproduce.</p>
+            <p><b>AI as the data.</b> I asked Claude, Codex, Meta AI and Gemini 100 shopper questions each, every one in a fresh session. Across 400 answers Nike was named first 17.5% of the time, behind Brooks. It led in gym and tennis but trailed in running and everyday walking.</p>
+            <p><b>What the data killed.</b> FY27 consensus already assumed a weak year, so most of the alt data only confirmed known problems. That moved the pitch from &ldquo;operations are bad&rdquo; to how far FY28 estimates had to fall. Short interest nearly doubled to 99 million shares, which I flagged as the main risk.</p>
+          </details>
+        </div>
+        <div class="pitch-side">
+          <span class="ret down"><b>-23%</b><span>To price target</span></span>
+          <dl class="sidelist">
+            <dt>Target</dt><dd>$29.37</dd>
+            <dt>Entry</dt><dd>$38.32</dd>
+            <dt>Bear/Bull</dt><dd>$22 / $42</dd>
             <dt>Horizon</dt><dd>12 mo</dd>
           </dl>
         </div>
@@ -922,8 +987,8 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li>Precedent: Google's 2010 ITA deal produced a 14-year toll-booth squeeze on OTAs — Vrbo's Google spend went from $21M to $290M on flat volume.</li>
           </ul>
           <div class="since">
-            <p class="since-head"><span class="verdict mixed">Mixed</span><span class="since-move">CSGP -6.0% · $29.94 &rarr; $28.14</span></p>
-            <p>Down, but far from $17.63. Q3 cut both ways: net new bookings fell to $37M from $84M and the stock lost 14% the next day, yet adjusted EBITDA of $229M beat guidance and Homes.com revenue grew about 50%, which isn't what this short needs.</p>
+            <p class="since-head"><span class="verdict wrong">Wrong so far</span><span class="since-move">CSGP +3.4% · $29.94 &rarr; $30.96</span></p>
+            <p>Back above my entry and nowhere near $17.63. Q3 cut both ways: net new bookings fell to $37M from $84M and the stock lost 14% the next day, yet adjusted EBITDA of $229M beat guidance and Homes.com revenue grew about 50%, which isn't what this short needs.</p>
           </div>
         </div>
         <div class="pitch-side">
@@ -963,7 +1028,7 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li>Cadence's own Hexagon deal is the smaller, messier one — ~$160M of 2026 revenue but <strong>$0.28 of 2026 EPS dilution</strong> before turning accretive in 2027.</li>
           </ul>
           <div class="since">
-            <p class="since-head"><span class="verdict mixed">Mixed</span><span class="since-move">SNPS +23.8% · CDNS +23.0%, from Apr 2 close</span></p>
+            <p class="since-head"><span class="verdict mixed">Mixed</span><span class="since-move">SNPS +15.0% · CDNS +15.9%, from Apr 2 close</span></p>
             <p>The long leg worked: fiscal Q3 revenue rose 42% with Ansys included, and guidance went up. But Cadence kept pace, so the spread I expected to narrow barely moved. Being long Synopsys was right; the pair made almost nothing.</p>
           </div>
         </div>
@@ -1002,7 +1067,7 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
             <li>Trades at <strong>1.22x NTM EV/revenue against Cava's 6.22x</strong> on comparable revenue scale, with loyalty liability up 114% YoY as the new program shifts behavior toward repeat.</li>
           </ul>
           <div class="since">
-            <p class="since-head"><span class="verdict right">Right</span><span class="since-move">SG +98.8% · $5.74 &rarr; $11.41</span></p>
+            <p class="since-head"><span class="verdict right">Right</span><span class="since-move">SG +113.6% · $5.74 &rarr; $12.26</span></p>
             <p>Well past the $7.59 target, though not in a straight line: it closed at $6.45 in July. I can't credit the traffic work for all of it, since the May leg came with the wraps launch and a JPMorgan upgrade.</p>
           </div>
         </div>
@@ -1031,48 +1096,131 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
 <section class="section">
     <p class="panel-meta">Open source · github.com/jessieyang22</p>
     <p class="section-note">
-      Alternative-data, rates, and derivatives work, built as reproducible code rather than one-off
-      spreadsheets. Results are reported as they came out, including where the signal fell short.
+      Forecasting, portfolio construction, rates, volatility and AI evaluation, built as reproducible code
+      rather than one-off spreadsheets. Results are reported as they came out, including where the signal fell short.
     </p>
 
     <article class="study">
       <div class="study-head">
-        <h3>Fama-French 5-Factor + Hiring Momentum</h3>
-        <span class="stack">Python · statsmodels · 181 stocks · 2018–2025</span>
+        <h3>Optiver Explaining Markets: Live AI Earnings Model</h3>
+        <span class="status">#20 of 390 as of Nov 13, 2026</span>
       </div>
       <p>
-        Does a hiring-momentum signal built from LinkedIn job-posting velocity explain cross-sectional
-        equity returns beyond the standard five factors? The premise: firms accelerating hiring are
-        signaling revenue confidence one to two quarters before it reaches the income statement.
+        Optiver and UChicago's forecasting competition for the Q4 2026 earnings season. Every time a company
+        reports, my model gets the release and has five minutes to predict how the stock moves the next day,
+        ranked against every other report that quarter.
       </p>
       <p>
-        The factor is constructed by z-scoring quarterly posting growth across 18 SaaS names on a rolling
-        four-quarter window, going <span class="term">long the top tercile and short the bottom</span>, then
-        forward-filling to monthly. Pricing is tested with a
-        <span class="term">Fama-MacBeth two-pass regression</span> — rolling 36-month betas, then monthly
-        cross-sectional premia — with Newey-West standard errors at four lags, and a
-        <span class="term">GRS joint test</span> on portfolio alphas.
+        <span class="term">Claude reads the release like an analyst.</span> It gets the fact summary, the
+        pre-earnings preview and a company card I build before each event, with beat history, guidance habits,
+        recent stock moves and the typical earnings-day move. Before it scores, it has to write down what the
+        market expected, how results and guidance compared, how the tone changed from the last call, and the
+        main driver. Code then applies a fixed rescaling, a small adjustment for the company's surprise history
+        and, since November 16, a term for <span class="term">analyst estimate revisions</span>. When estimates
+        have been rising, the bar is higher, so the score comes down a little.
+      </p>
+      <p>
+        Nothing from after the cutoff gets in. The model has no web, tools or news, and the company cards and
+        twice-daily consensus snapshots only use data from before each event. It never misses a deadline. If
+        Claude times out or returns something unreadable, a simple model trained on past events takes over, and
+        if that fails too it submits a neutral 0.5. Every prediction is logged with its inputs and the path it took.
+      </p>
+      <p class="caveat">
+        Claude is the primary model, so every change had to beat the live version on a walk-forward test, with a
+        holdout week I only scored at the end. In one round I tested about 110 ideas, including 28 machine
+        learning models, and only analyst revision momentum survived. A seasonality study of 149 hypotheses found
+        nothing, 0 of 78 claims held up on live data, and 60 prompt rewrites and 100 blend tests didn't beat the
+        live version. The fields Claude pulled from text added nothing once revisions were in.
+      </p>
+    </article>
+
+    <article class="study">
+      <div class="study-head">
+        <h3>Portfolio Construction: 27 Methods Against Equal Weight</h3>
+        <span class="stack">Python &middot; 12 cross-asset ETFs &middot; 2010&ndash;2026 out of sample</span>
+      </div>
+      <p>
+        Does any portfolio construction method beat holding 12 ETFs in equal weight once it has to work out of
+        sample? Every method, from Markowitz, Black-Litterman and <span class="term">risk parity</span> to CVaR,
+        HRP, GARCH covariances and HMM regimes, runs through the same walk-forward backtest: a 504-day lookback,
+        rebalancing every 21 days, weights drifting in between and 5 bp per unit of turnover. Each Sharpe gap is
+        tested with a <span class="term">paired block bootstrap</span>, since every strategy holds the same ETFs.
       </p>
       <div class="table-wrap">
         <table class="results">
-          <caption>Model comparison · 181-stock universe, 59 cross-sectional periods</caption>
+          <caption>Sharpe in excess of T-bills &middot; Jan 2010 to Nov 2026 &middot; p is the paired test of the gap to equal weight</caption>
           <thead>
-            <tr><th scope="col">Metric</th><th scope="col">FF5</th><th scope="col">FF5 + HM</th></tr>
+            <tr><th scope="col">Method</th><th scope="col">Sharpe</th><th scope="col">vs EW</th><th scope="col">p</th><th scope="col">Max DD</th></tr>
           </thead>
           <tbody>
-            <tr class="highlight"><th scope="row">Avg cross-sectional R²</th><td>20.0%</td><td>22.0%</td></tr>
-            <tr><th scope="row">GRS F-statistic</th><td>4.257</td><td>4.223</td></tr>
-            <tr><th scope="row">Mean |alpha|, monthly</th><td>0.602%</td><td>0.603%</td></tr>
-            <tr><th scope="row">HM premium, monthly</th><td>—</td><td>+0.284%</td></tr>
-            <tr><th scope="row">HM t-stat (Newey-West)</th><td>—</td><td>1.56</td></tr>
+            <tr><th scope="row">Equal weight</th><td>0.64</td><td>&mdash;</td><td>&mdash;</td><td>&minus;22.0%</td></tr>
+            <tr class="highlight"><th scope="row">Risk parity (ERC)</th><td>0.72</td><td>+0.09</td><td>0.27</td><td>&minus;21.2%</td></tr>
+            <tr><th scope="row">Mean CVaR</th><td>0.66</td><td>+0.02</td><td>0.90</td><td>&minus;15.2%</td></tr>
+            <tr><th scope="row">HRP</th><td>0.51</td><td>&minus;0.13</td><td>0.40</td><td>&minus;19.8%</td></tr>
+            <tr><th scope="row">HMM regime</th><td>0.26</td><td>&minus;0.38</td><td>0.07</td><td>&minus;31.2%</td></tr>
+            <tr><th scope="row">Random forest forecasts</th><td>0.20</td><td>&minus;0.43</td><td>0.01</td><td>&minus;24.6%</td></tr>
           </tbody>
         </table>
       </div>
       <p class="caveat">
-        Hiring momentum earns the second-highest t-statistic in the model and lifts cross-sectional R² by
-        9.6% relative, at roughly +3.4% annualized. It does not clear the 1.96 threshold for significance at
-        5%. With 59 periods and a quarterly signal forward-filled to monthly, the effective sample is nearer
-        20 independent observations — the honest read is limited statistical power, not an absent signal.
+        Nothing beats equal weight significantly. Risk parity leads by 0.09 with p = 0.27, and each Sharpe on its
+        own carries a standard error of about 0.24. Counting cash matters for low-vol rules. Minimum variance ties
+        equal weight at a zero hurdle and trails by 0.17 once T-bills come out. The risk-based rules still do what
+        they promise on risk, cutting volatility about in half. The forecast-driven methods are where the losses are.
+      </p>
+    </article>
+
+    <article class="study">
+      <div class="study-head">
+        <h3>Macro Forecasting Engine for Kalshi</h3>
+        <span class="stack">Python &middot; Treasury, BLS, EIA, FRED, AAA &middot; CRPS and Brier scoring</span>
+      </div>
+      <p>
+        Probability forecasts for traded macro contracts: CPI and payrolls, the 10-year yield, EUR/USD,
+        Nasdaq-100 and S&amp;P closes, gas prices and the Fear &amp; Greed Index. Each target reads the
+        contract's own settlement rules, builds a full distribution and is scored against Kalshi prices
+        <span class="term">after fees</span>. Every target has to pass its own acceptance gate, written before
+        the backtest, before its live signal turns on.
+      </p>
+      <p class="caveat">
+        The best cell is headline CPI at a 30-day lead, where the model beats the best baseline Brier score by
+        30% (Holm-adjusted p = 0.004). No target has passed its full gate yet, so none produces a live signal.
+        AAA gas is the clearest failure: the market the night before beats my model by a wide margin, so that
+        target defers to the market. Research only, no orders placed. The repository is private and available on request.
+      </p>
+    </article>
+
+    <article class="study">
+      <div class="study-head">
+        <h3>SaaS Factor Signals + Hiring Data</h3>
+        <span class="stack">Python &middot; 12 SaaS names &middot; SEC fundamentals &middot; Indeed via FRED</span>
+      </div>
+      <p>
+        Four fixed signals (12-to-1-month momentum, low volatility, SEC-reported operating margin and revenue
+        growth) ranked monthly across 12 SaaS names into tercile portfolios, run through a self-financing ledger
+        with <span class="term">transaction and borrowing costs</span>. A second study asks whether Indeed's US
+        software job-postings index improves SaaS revenue forecasts beyond reported growth, margin and momentum.
+      </p>
+      <div class="table-wrap">
+        <table class="results">
+          <caption>Chronological test &middot; Jan 2023 to Aug 2026 &middot; after modeled costs</caption>
+          <thead>
+            <tr><th scope="col">Portfolio</th><th scope="col">Ann. return</th><th scope="col">Sharpe</th><th scope="col">Max DD</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Composite long/short</th><td>&minus;6.38%</td><td>&minus;0.34</td><td>&minus;31.21%</td></tr>
+            <tr class="highlight"><th scope="row">Composite long-only</th><td>23.07%</td><td>0.74</td><td>&minus;40.17%</td></tr>
+            <tr><th scope="row">SaaS equal weight</th><td>29.92%</td><td>0.89</td><td>&minus;38.47%</td></tr>
+            <tr><th scope="row">SPY</th><td>22.39%</td><td>1.68</td><td>&minus;8.33%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caveat">
+        The long-only composite trails the equal-weight universe, so this run doesn't support a stock-selection
+        edge. Hiring features cut revenue-forecast RMSE from 0.1057 to 0.0851 across 165 company-quarters, but
+        every company shares one hiring series, so those aren't 165 independent observations. An earlier
+        FF5 + hiring-momentum version on this page used a generated hiring factor. I withdrew it and replaced it
+        with this real-data run.
       </p>
     </article>
 
@@ -1224,6 +1372,60 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
     <div class="repos">
 
       <div class="repo">
+        <h3><a href="https://github.com/jessieyang22/portfolio-optimization" target="_blank" rel="noopener">portfolio-optimization</a></h3>
+        <p>27 portfolio construction methods, from Markowitz and Black-Litterman to risk parity, CVaR, HRP and HMM regimes, all run through one walk-forward backtest and tested against equal weight. 48 tests, frozen prices.</p>
+        <span class="stack">Python &middot; portfolio construction</span>
+      </div>
+
+      <div class="repo">
+        <h3><a href="https://github.com/jessieyang22/factor-model" target="_blank" rel="noopener">factor-model</a></h3>
+        <p>Four SaaS equity signals with SEC fundamentals and Indeed hiring data, run through a self-financing portfolio ledger with costs. Replaces an earlier version whose results I withdrew.</p>
+        <span class="stack">Python &middot; factor research</span>
+      </div>
+
+      <div class="repo">
+        <h3><a href="https://github.com/jessieyang22/research-ledger" target="_blank" rel="noopener">research-ledger</a></h3>
+        <p>Keeps AI research honest about time. Every record tracks when something happened and when I knew it, revisions are added as new rows and never overwrite, and numbers pulled from filings stay unconfirmed until a person checks them.</p>
+        <span class="stack">Python &middot; point-in-time data</span>
+      </div>
+
+      <div class="repo">
+        <h3><a href="https://github.com/jessieyang22/13f-tracker" target="_blank" rel="noopener">13f-tracker</a></h3>
+        <p>Pulls 13F filings for 24 hedge funds from SEC EDGAR, classifies every position change as new, add, trim or exit, and maps CUSIPs to tickers. GitHub Actions reruns it after each filing deadline, so the repo updates itself every quarter.</p>
+        <span class="stack">Python &middot; SEC EDGAR &middot; GitHub Actions</span>
+      </div>
+
+      <div class="repo">
+        <h3><a href="https://github.com/jessieyang22/causal-estimators-vs-randomized-benchmark" target="_blank" rel="noopener">causal-estimators-vs-randomized-benchmark</a></h3>
+        <p>Do regression, matching, AIPW and difference-in-differences recover the answer from the randomized LaLonde job-training experiment? Mostly no. Pass rules were written before any estimate was compared.</p>
+        <span class="stack">R &middot; causal inference</span>
+      </div>
+
+      <div class="repo">
+        <h3><a href="https://github.com/jessieyang22/metric-design-goodhart-lab" target="_blank" rel="noopener">metric-design-goodhart-lab</a></h3>
+        <p>Which north-star metric for an online retailer tracks 90-day customer value, and how easily can each be gamed? No candidate passes every pre-set test, and every failure is reported.</p>
+        <span class="stack">Python &middot; metric design</span>
+      </div>
+
+      <div class="repo">
+        <h3><a href="https://github.com/jessieyang22/new-product-demand-partial-pooling" target="_blank" rel="noopener">new-product-demand-partial-pooling</a></h3>
+        <p>Cold-start demand forecasts for new products with a hierarchical model. The primary result is negative. At 4 weeks of history it doesn't beat a carry-forward forecast.</p>
+        <span class="stack">Python &middot; Bayesian forecasting</span>
+      </div>
+
+      <div class="repo">
+        <h3><a href="https://github.com/jessieyang22/sequential-ab-testing-thin-data" target="_blank" rel="noopener">sequential-ab-testing-thin-data</a></h3>
+        <p>Which early-stopping rule should a low-traffic team use for an A/B test? Simulations on real Criteo users price each rule in false winners, missed effects and time.</p>
+        <span class="stack">Python &middot; experimentation</span>
+      </div>
+
+      <div class="repo">
+        <h3><a href="https://github.com/jessieyang22/bikeshare-capacity-forecasting" target="_blank" rel="noopener">bikeshare-capacity-forecasting</a></h3>
+        <p>Chicago Divvy demand forecasting scored once on a locked test window. The rules failed, and the write-up says so.</p>
+        <span class="stack">Python &middot; demand forecasting</span>
+      </div>
+
+      <div class="repo">
         <h3><a href="https://github.com/jessieyang22/finance-eval" target="_blank" rel="noopener">finance-eval</a></h3>
         <p>A finance-reasoning eval built from SEC filings: 121 open-book questions with exact keys, Claude Haiku, Sonnet and Opus results, error analysis, and retrieval and citation demos.</p>
         <span class="stack">Python · LLM evaluation · SEC filings</span>
@@ -1231,8 +1433,8 @@ table.results tr.highlight td,table.results tr.highlight th{color:var(--accent);
 
       <div class="repo">
         <h3><a href="https://github.com/jessieyang22/hiring-momentum" target="_blank" rel="noopener">hiring-momentum</a></h3>
-        <p>The signal research feeding the factor model — job-posting velocity as a leading revenue indicator across SaaS, from collection through z-scored construction.</p>
-        <span class="stack">Python · Apify · alternative data</span>
+        <p>Indeed's US software job-postings index, via FRED, tested as a leading signal for SaaS revenue, with forecast scores against a no-hiring baseline. Companion to factor-model.</p>
+        <span class="stack">Python · FRED · alternative data</span>
       </div>
 
       <div class="repo">

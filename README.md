@@ -42,8 +42,8 @@ remembered in `localStorage`:
 
 | Tab | Contents |
 |---|---|
-| Stock pitches | Nine long/short theses with targets, horizons, evidence, how each call has played out since, and most of the write-ups |
-| Quant research | Fama-French 5 + hiring-momentum factor study, finance reasoning eval, open-source repos, ABNB demand model |
+| Stock pitches | Ten long/short theses with targets, horizons, evidence, how each call has played out since, how AI was used, and most of the write-ups |
+| Quant research | Optiver live AI earnings model, portfolio construction study, Kalshi macro forecasting engine, SaaS factor + hiring study, Treasury/DV01, options, GARCH, finance reasoning eval, open-source repos, ABNB demand model |
 | Writing | Enterprise business and tech reporting for *The Independent Florida Alligator* |
 | Experience | Investment banking, real estate, newsroom, student fund |
 | Education & toolkit | Degree, methods, certifications, memberships |
